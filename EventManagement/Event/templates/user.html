@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      
+        <title>Number validation</title>
+      
+    </head>
+    <body>
+        <h1> User Form </h1>
+            <form method='POST'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type='submit' value='reg'>
+            </form>
+        <script src="" async defer></script>
+    </body>
+</html>
