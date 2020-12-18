@@ -9,7 +9,7 @@ class EventUserAdmin(admin.ModelAdmin):
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ("service", "Max_Guest", "start_date", "end_date")
+    list_display = ("service", "Max_Guest", "start_date", "end_date","payment_status")
     list_filter = ("service", "Max_Guest", "start_date", "end_date")
     search_fields = ("service", "Max_Guest", "start_date", "end_date")
 

@@ -2,40 +2,35 @@
 
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from www.free-css.com/assets/files/free-css-templates/preview/page248/sweetwedding/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Nov 2020 12:38:20 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-<title>Free CSS | Free CSS Templates | Demo of the HTML CSS Template SweetWeddine</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Event Management</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
 
-<link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
-
-<style type="text/css">
-#freecssfooter{display:block;width:100%;padding:120px 0 20px;overflow:hidden;background-color:transparent;z-index:5000;text-align:center;}
-#freecssfooter div#fcssholder div{display:none;}
-#freecssfooter div#fcssholder div:first-child{display:block;}
-#freecssfooter div#fcssholder div:first-child a{float:none;margin:0 auto;}
-
-</style>
+  <style type="text/css">
+    #freecssfooter{display:block;width:100%;padding:120px 0 20px;overflow:hidden;background-color:transparent;z-index:5000;text-align:center;}
+    #freecssfooter div#fcssholder div{display:none;}
+    #freecssfooter div#fcssholder div:first-child{display:block;}
+    #freecssfooter div#fcssholder div:first-child a{float:none;margin:0 auto;}
+  </style>
 
 </head>
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-<script type="text/javascript">
-(function(){
-  var bsa = document.createElement('script');
+  <script type="text/javascript">
+     (function(){
+     var bsa = document.createElement('script');
      bsa.type = 'text/javascript';
      bsa.async = true;
      bsa.src = '../../../../../../../s3.buysellads.com/ac/bsa.js';
-  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-})();
+     (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+     })();
+  </script>
 
-
-</script>
 <header class="top-header">
   <nav class="navbar header-nav navbar-expand-lg">
     <div class="container"><a class="navbar-brand" href="http://127.0.0.1:8000/result/"><img src="{% static 'images/logo.png' %}" alt="website template image"></a>
@@ -77,43 +72,40 @@
 <div class="modal fade" id="mymodel">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      
-    <div class="modal-header">
-      <h3 class="text-primary">Add Event</h3>
-      <button type="button" class="close" data-dismiss="modal"> &times; </button>
-    </div>
+       <div class="modal-header">
+          <h3 class="text-primary">Add Event</h3>
+          <button type="button" class="close" data-dismiss="modal"> &times; </button>
+        </div>
 
-    <div class="modal-body">
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="form-group">
-        {{form1.as_p}}
-        {{form2.as_p}}
-        {{form3.as_p}}
-    </div>
-      <div class="modal-footer justify-content-center">
-        <input type="submit" class="btn btn-danger" value="Save">
-    </div>
-    </form>
-    </div>
+        <div class="modal-body">
+          <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            {{form1.as_p}}
+            {{form2.as_p}}
+            {{form3.as_p}}
+          </div>
+          <div class="modal-footer justify-content-center">
+            <input type="submit" class="btn btn-danger" value="Save">
+          </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 <!--End form-->
 
 <!--Results-->
 
     <div class="row">
-    {% for i in data %}
-      <div class="col-lg-4 col-md-6 col-sm-12">
+        {% for i in data %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="event-inner">
           <div class=""><img class="img-fluid" src="{{i.event_photos.get.photo.url}}" alt="website template image"></div>
           <h2><b>{{i.service}}</b></h2>
           <p>{{i.start_date}}</p>
-          <p><b>{{i.event_user.fname}} {{i.event_user.lname}}</b> </p>
-         
-          		 
+          <p><b>{{i.event_user.fname}} {{i.event_user.lname}}</b> </p>	 
         </div>
       </div>
       {% endfor %}

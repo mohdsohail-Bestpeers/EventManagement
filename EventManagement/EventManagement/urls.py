@@ -26,11 +26,13 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('result/', views.result),
     # path('user/', views.user),
-    url(r'(?P<x>\w{1,10})/detail/$', views.detail),
+    path('',views.home),
+    url(r'event/(?P<x>\w{1,10})/detail/$', views.detail),
     path('login/', views.login_view),
     path('logout/', views.logout_view),
+    path('payment/', views.payment),
+    path('find/', views.find_data, name='find'),
     
     
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

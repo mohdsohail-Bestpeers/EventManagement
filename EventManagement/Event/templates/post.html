@@ -1,0 +1,12 @@
+{% for obj in objs %}
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="event-inner">
+          <div class="data"><img class="img-fluid" src="{{obj.event_photos.get.photo.url}}" alt="website template image"></div>
+          <h2><b>{{obj.service}}</b></h2>
+          <p>{{obj.start_date}}</p>
+          <p><b>{{obj.event_user.fname}} {{obj.event_user.lname}}</b> </p>
+         
+          		 
+        </div>
+      </div>
+      {% endfor %}

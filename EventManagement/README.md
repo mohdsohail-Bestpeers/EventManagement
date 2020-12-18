@@ -10,54 +10,73 @@ This project is a web app for organizing events. Built with Python, Postgresql, 
 * Html5
 * Css
 * Js (Java Scripts)
+* jQuery - AJAX
 
 # Installation
 
-* Click on [Install](https://cheiyung.wordpress.com/2017/05/26/how-to-install-python-3-5-2-on-ubuntu-linuxmint/) for Python 3.5.2
+* __Click on [Install](https://pypi.org/project/virtualenv/) to create Virtual-Environments__
 
-* Click on [Install](https://www.e2enetworks.com/help/knowledge-base/how-to-install-django-on-ubuntu-18-04-16-04-lts/) for Django 2.2.6 
+* __Install python 3.5__
+```bash
+    sudo apt-get install python3.5
+```
+* __Install requirements.txt for the project dependencies:__
+```bash 
+    pip install -r requirements.txt
+```
 
+* __Install postgresql database__
+```bash
+    sudo apt-get install postgresql postgresql-contrib
+```
+# Create Database:
+* _sudo -u postgres psql_
+* _CREATE DATABASE event2db;_
+* _\l_
+* _\q_
 
-* Click on [Install](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) to create Virtual-Environments
-
+# How to Use:
+* Update database in settings.py file
+```bash
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'event2db',
+            'USER': 'root',
+            'PASSWORD': 'root',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
+    }
+```
 
 # Commands to run the code:
 
-* __Start the virtual environment:__
+* __Activate virtual environment:__
 ```bash 
-source venv/bin/activate
+    source Environment_name/bin/activate
 ```
 
-* __Install the project dependencies:__
-```bash 
-pip install -r requirements.txt
-```
-
-* __install Pillow__, _It is a Python Imaging Library (PIL)_
-```bash 
-pip install pillow
-```
-
-* __Run the migrations:__
+* __Run the migrations Command:__
 
 _Go in project directory and run_
 ```bash
-Python manage.py makemigrations
+    Python manage.py makemigrations
 ```
 
-* __Run the migrate:__
+* __Run the migrate Command:__
 ```bash
-python manage.py migrate
+    python manage.py migrate
 ```
 
 * __Create a superuser:__
 ```bash
-python manage.py createsuperuser
+    python manage.py createsuperuser
 ```
 
 * __Run the Server:__
 ```bash
-python manage.py runserver
+    python manage.py runserver
 ```
 
 * __Endpoint:__
