@@ -83,3 +83,12 @@ _Go in project directory and run_
 ```bash
 http://127.0.0.1:8000/
 ```
+* __SignUp Event account using User and EventRoll from django admin__
+    * Required Information:
+```bash
+    username, passwords, firstname
+```
+* __Start project and login by event credentials__
+```bash
+    http://127.0.0.1:8000/
+```
